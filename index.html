@@ -62,7 +62,7 @@ document.getElementById('generateIframe').addEventListener('click', () => {
 
   if (!beforeSrc || !afterSrc) { alert('Debes cargar ambas imágenes'); return; }
 
-  const embedUrl = `${window.location.origin}/embed.html?before=${encodeURIComponent(beforeSrc)}&after=${encodeURIComponent(afterSrc)}`;
+  const embedUrl = `${window.location.origin}/VHS-Slider/embed.html?before=${encodeURIComponent(beforeSrc)}&after=${encodeURIComponent(afterSrc)}`;
   const code = `<iframe src="${embedUrl}" width="700" height="400" frameborder="0" scrolling="no"></iframe>`;
   document.getElementById('iframeCode').value = code;
 });
