@@ -1,0 +1,94 @@
+body {
+  font-family: system-ui, sans-serif;
+  padding: 30px;
+  background: #f7f7f7;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: grid;
+  gap: 16px;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+input[type="url"], input[type="file"] {
+  padding: 6px;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
+#sliderContainer {
+  max-width: 700px;
+}
+
+/* === Slider === */
+.ba-slider {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  cursor: ew-resize;
+}
+
+.ba-slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.ba-after {
+  z-index: 1;
+}
+
+.ba-before {
+  z-index: 2;
+  clip-path: inset(0 50% 0 0); /* mitad visible */
+}
+
+.ba-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: white;
+  z-index: 3;
+  transform: translateX(-50%);
+}
+
+.ba-handle::after {
+  content: "‹ ›";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  background: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  letter-spacing: 6px;
+}
